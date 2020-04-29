@@ -1,6 +1,6 @@
 import React from 'react';
-
-
+import fetchCity from '../queries/fetchCity'; 
+import { useQuery } from "@apollo/react-hooks";
 
 const Form = () => {
     return (

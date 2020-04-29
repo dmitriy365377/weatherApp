@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
-import fetchCity from './queries/fetchCity'; 
-import { ApolloProvider, useQuery } from "@apollo/react-hooks";
+import './App.css'; 
+import { ApolloProvider} from "@apollo/react-hooks";
 import apolloClient from './apolloClient';
 
 import Form from './components/Form';
@@ -18,8 +17,7 @@ function App() {
 
 function View() {
   return (
-    <div>
-      Hello
+    <div> 
       <Form />
       <Weather />
     </div>
