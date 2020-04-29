@@ -1,13 +1,12 @@
 import React from 'react';
-import fetchCity from '../queries/fetchCity'; 
-import { useQuery } from "@apollo/react-hooks";
 
-const Form = () => {
+
+const Form = (props) => { 
     return (
-         <form>
-             <input type="text" name="city" placeholder="Enter city name..." />
-             <button>Get Weather</button>
-         </form>
+        <form onSubmit={props.getCurrentWeather}>
+            <input type="text" name="city" placeholder="Enter city name..." />
+            <button>Get Weather</button>
+        </form> 
     )
 }
 
