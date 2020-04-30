@@ -5,7 +5,7 @@ import Form from './components/Form';
 import Weather from './components/Weather'; 
 
 import GET_CURRENT_WEATHER from './queries/getCurrentWeather';
-import { useLazyQuery } from "@apollo/client";
+import { useLazyQuery  } from "@apollo/react-hooks";
 
 
 function App() {
