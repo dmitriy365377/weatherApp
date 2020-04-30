@@ -20,10 +20,14 @@ function View() {
   const handelFormSubmmit = (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    setCurrentWeather({ variables: { cityName: city } }); 
+    console.log(city)
+    setCurrentWeather({ variables: {
+      cityname:city
+     } }); 
+   
   }
-
   console.log(data);
+ 
 
   return (
     <div>
