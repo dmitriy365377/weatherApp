@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    width: 1200px;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.findlocation{
+    position: relative
+}
+
+.findlocation input[type="text"] {
+    width: 100%;
+    padding: 20px 50px 20px 20px; 
+    color: white;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}    
+
+.findlocation input[type="submit"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    padding: 0 40px;
+    border: none;
+    background: #009AD7;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+}
