@@ -11,8 +11,7 @@
 
 .findlocation input[type="text"] {
     width: 100%;
-    padding: 20px 50px 20px 20px; 
-    color: white;
+    padding: 20px 50px 20px 20px;  
     border-radius: 30px;
     border: none;
     outline: none;
@@ -29,4 +28,6 @@
     padding: 10px 20px;
     border-radius: 30px;
     color: white;
+    outline: none;
+    cursor: pointer;
 }

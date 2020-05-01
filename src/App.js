@@ -1,5 +1,4 @@
-import React from 'react';
-import style from './App.module.css';
+import React,{useRef} from 'react';
 
 import Form from './components/Form';
 import Weather from './components/Weather';
@@ -15,31 +14,35 @@ function App() {
 }
 
 function View() {
-  const [setCurrentWeather, { data, error, loading }] = useLazyQuery(GET_CURRENT_WEATHER);
+  const [setCurrentWeather, {loading, data}] = useLazyQuery(GET_CURRENT_WEATHER);
+  const childRef = useRef();
 
   const handelFormSubmmit = (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
-    console.log(city)
+
     setCurrentWeather({
       variables: {
         cityname: city
       }
-    });
-
-  }
-
-  console.log(data);
-
-
+    });  
+    console.log(setCurrentWeather)
+    return childRef.current.addItem() 
+  }   
+ 
   return (
     <div>
-      <Form  
-      handelFormSubmmit={handelFormSubmmit} 
+      <Form
+        handelFormSubmmit={handelFormSubmmit}
       />
-      <Weather />
+      <Weather
+      ref={childRef} 
+      data={data} 
+      loading={loading} />
     </div>
   )
 }
 
 export default App;
+
+
