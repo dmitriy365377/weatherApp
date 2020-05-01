@@ -1,13 +1,18 @@
 import React from 'react';
-
+import style from './Weather.module.css';
 
 const WeatherTest = ({ temp, city, id, onDelete }) => {
     return (
-        <div>
-            <button onClick={() => onDelete && onDelete(id)}>Удалить</button>
-            <div>{temp}</div>
-            <div>{city}</div>
-            <div>Id {id}</div>
+        <div className={style.forecastcontainer}>
+            <label
+                onClick={() => onDelete && onDelete(id)}
+                className={style.closebtn}>&times;</label>
+            <div className={style.location}>{city}</div>
+            <div className={style.degree}>
+                {temp}
+                <sup>o</sup>
+                C
+            </div>
         </div>
     )
 }

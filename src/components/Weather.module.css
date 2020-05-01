@@ -1,0 +1,31 @@
+.forecastcontainer{ 
+    background: #323544;
+    display: table;
+    table-layout: fixed;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 10px;  
+    margin: 10px auto;
+    justify-content: center;
+    padding: 15px 20px 10px;
+}
+
+.location{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+.degree{
+    font-size: 50px; 
+    color: white;
+    font-weight: 700;
+}
+ 
+.closebtn {
+    margin-left: 15px;   
+    float: right; 
+    cursor: pointer;
+    font-size: 200%;
+}
+ 
