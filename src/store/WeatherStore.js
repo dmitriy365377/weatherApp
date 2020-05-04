@@ -2,44 +2,28 @@ import { observable, computed, configure, action, decorate, runInAction } from '
 configure({ enforceActions: 'observed' })
 
 
-// const endPointURL = "https://7b3u2.sse.codesandbox.io/";
-
 class Store {
 
     weatherData = [];
 
-    loadWeather(city) {
-        fetch("http://localhost:9000/graphql", {
-            method: 'POST',
-            headers: { 'content-type': 'aplication/json' },
-            body: JSON.stringify({
-                query: `query Weather($cityname:String) { 
-                    getCurrentWeather(cityName: $cityname) {
-                     main { 
-                       temp_c
-                     }
-                     name
-                     id
-                   }
-                 }`,
-                variables: { city }
-            })
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setWeather(data);
-            })
+    addDataToStore(newItem) {
+        console.log(newItem)
+        this.setWeather(newItem);
     };
 
-    setWeather = (data) => {
-        this.weatherData = data;
+    setWeather = (newItem) => {
+        return this.weatherData = [
+            ...this.weatherData,
+            newItem
+        ]
     };
+
 }
 
 
 decorate(Store, {
     weatherData: observable,
-    loadWeather: action.bound,
+    addDataToStore: action.bound,
     setWeather: action
 })
 
