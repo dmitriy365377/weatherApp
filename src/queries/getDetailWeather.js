@@ -11,10 +11,8 @@ export default `
                 icon
             }
         }
- 	   city {
-        id
-        name
-        timezone
+ 	   city { 
+        name  
         } 
     }   
 }
