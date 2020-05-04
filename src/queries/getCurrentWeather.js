@@ -1,6 +1,4 @@
-import gql from 'graphql-tag'; 
-
-export default gql` 
+export default ` 
     query Weather($cityname:String) { 
         getCurrentWeather(cityName: $cityname) {
         main { 
@@ -9,5 +7,5 @@ export default gql`
         name
         id
     }
-} 
+}
 ` 
