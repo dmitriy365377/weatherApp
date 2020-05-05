@@ -15,7 +15,7 @@ const Weather = ({ temp, city, id, wind, onDelete }) => {
                 <NavLink to={`/weatherdetail/${city}`}>{city}</NavLink>
             </div>
             <div className={style.degree}>
-                {temp}
+                {Math.round(temp)}
                 <sup>o</sup>
                 C
             </div>
