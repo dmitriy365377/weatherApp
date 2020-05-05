@@ -21,6 +21,6 @@ API - за это отвечается GrapgQL
 
 ### Как запустить?
 
-1.перейти в папку my-app: cd my-app
-2.установить node_modules: npm install
-3.запустить приложение: npm start
+1. перейти в папку my-app: cd my-app
+2. установить node_modules: npm install
+3. запустить приложение: npm start
