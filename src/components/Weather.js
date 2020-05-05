@@ -8,9 +8,9 @@ const Weather = ({ temp, city, id, onDelete }) => {
             <label
                 onClick={() => onDelete && onDelete(id)}
                 className={style.closebtn}
-            >&times;</label> 
+            >&times;</label>
             <div className={style.location}>
-                <NavLink  to={`/weatherdetail/${city}`}>{city}</NavLink>
+                <NavLink to={`/weatherdetail/${city}`}>{city}</NavLink>
             </div>
             <div className={style.degree}>
                 {temp}

@@ -4,3 +4,46 @@
    align-items: center;
    justify-content: center;
 }
+
+.card a {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: .25px;
+    line-height: 32px;
+}
+
+.card h3{
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: .25px;
+    line-height: 32px;
+}
+
+.date{
+    margin-bottom: 10px;
+    letter-spacing: .6px;
+    font-size: 20px; 
+}
+ 
+.headers{ 
+    border-bottom: solid 1px #e5e5e5; 
+    font-family: 'YS Text Web',Helvetica Neue,Arial;  
+    line-height: 16px; 
+    height: 34px; 
+    font-size: 16px;
+    color: #222426;
+}
+.weathertoday{
+    background: #fff;
+    border-radius: 12px;
+    width: 70%;
+    border: none;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 50px;
+}
+
+.text{
+    text-align: center;
+    font-size: 15px;
+}

@@ -9,7 +9,7 @@ import { Provider } from "mobx-react";
 import { WeatherStore } from './store/WeatherStore';
 
 
-import WeatherDetail from './components/WeatherDetail'; 
+import WeatherDetail from './components/WeatherDetail';
 
 ReactDOM.render(
   <Provider WeatherStore={WeatherStore}>

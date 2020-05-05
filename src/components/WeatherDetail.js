@@ -11,7 +11,6 @@ import GET_DETAIL_WEATHER from '../queries/getDetailWeather';
 import { format } from 'date-fns';
 
 
-
 const WeatherDetail = () => {
     const [state, setState] = useState([])
     const params = useParams();
@@ -34,17 +33,72 @@ const WeatherDetail = () => {
         return (<div className={style.loader}><Loading /></div>)
     };
 
-    console.log(state)
+    return (<div className={style.card}>
+        <h3>{state.getWeather && `${state.getWeather.city.name} Weather`}</h3>
+        <dd>
+            <div className={style.date}>
+                <NavLink to="/">Back</NavLink>
+                <strong>{'Today is ' + format(new Date(), 'd MMM')}</strong>
+            </div>
+            <table className={style.weathertoday}>
+                <thead>
+                    <tr className={style.headers}>
+                        <th><div>Time</div></th>
+                        <th><div>Temperature</div></th>
+                        <th><div>Atmospheric phenomena</div></th>
+                        <th><div>Description</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        state.getWeather && state.getWeather.list
+                            .filter((item, idx) => idx < 24)
+                            .map((item, id) => (
+                                <tr key={id} className={style.text}>
+                                    {console.log(id)}
+                                    <td>{`${id}:00`}</td>
+                                    <td>{item.main.temp_c}</td>
+                                    <td>{item.weather[0].main}</td>
+                                    <td>{item.weather[0].description}</td>
+                                </tr>
+                            ))
+                    }
+                </tbody>
+            </table>
 
 
-    return (<div>
-        <div>{state.getWeather && `${state.getWeather.city.name} Weather`}</div>
-        <div>{'Today is ' + format(new Date(), 'd MMM')}</div>
-        <NavLink to="/">Back</NavLink>
-        <h3>Weather Detail</h3>
+            <div className={style.date}>
+                <strong>Next day</strong>
+            </div>
+            <table className={style.weathertoday}>
+                <thead>
+                    <tr className={style.headers}>
+                        <th><div>Time</div></th>
+                        <th><div>Temperature</div></th>
+                        <th><div>Atmospheric phenomena</div></th>
+                        <th><div>Description</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {state.getWeather && state.getWeather.list
+                        .filter((item, idx) => idx > 23)
+                        .map((item, id) => (
+                            <tr key={id} className={style.text}>
+                                {console.log(id)}
+                                <td>{`${id}:00`}</td>
+                                <td>{item.main.temp_c}</td>
+                                <td>{item.weather[0].main}</td>
+                                <td>{item.weather[0].description}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+
+
+        </dd>
     </div>
     );
 }
-
 
 export default WeatherDetail;
