@@ -12,7 +12,7 @@ function App(props) {
   }
 
   const { weatherData, loading, deleteWeather } = props.WeatherStore;
-
+  console.log(weatherData)
   return (
     <div>
       <Form
@@ -20,12 +20,13 @@ function App(props) {
         loading={loading}
       />
       {
-        weatherData.map(({ temp, city, id }) => (
+        weatherData.map(({ temp, city, id, wind }) => (
           <Weather
             id={id}
             key={id}
             temp={temp}
             city={city}
+            wind={wind}
             onDelete={deleteWeather} />
         ))
       }

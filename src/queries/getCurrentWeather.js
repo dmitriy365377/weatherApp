@@ -4,6 +4,10 @@ export default `
         main { 
             temp_c
         }
+        wind{
+            speed
+            deg
+        }
         name
         id
     }

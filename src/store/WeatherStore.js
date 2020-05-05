@@ -17,19 +17,20 @@ class Store {
         });
 
         const { data, error } = await graphql(GET_CURRENT_WEATHER, { cityname });
-
+        console.log(data)
         if (data && data.getCurrentWeather && !error) {
 
             const objData = {
                 temp: data.getCurrentWeather.main.temp_c,
                 city: data.getCurrentWeather.name,
-                id: data.getCurrentWeather.id
+                id: data.getCurrentWeather.id,
+                wind: data.getCurrentWeather.wind
             }
 
             const index = this.weatherData.findIndex((el) => (el.id === objData.id));
 
             runInAction(() => {
-                index === -1 ? this.weatherData.push(objData) : this.weatherData[index] = objData
+                index === -1 ? this.weatherData.push(objData) : this.weatherData[index] = objData;
             });
         }
 

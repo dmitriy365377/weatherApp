@@ -1,8 +1,10 @@
 import React from 'react';
 import style from './Weather.module.css';
 import { NavLink } from "react-router-dom";
+import windImg from '../image/wind.svg';
+import compassImg from '../image/compass.svg';
 
-const Weather = ({ temp, city, id, onDelete }) => {
+const Weather = ({ temp, city, id, wind, onDelete }) => {
     return (
         <div className={style.forecastcontainer}>
             <label
@@ -17,6 +19,8 @@ const Weather = ({ temp, city, id, onDelete }) => {
                 <sup>o</sup>
                 C
             </div>
+            <span><img src={windImg}/>{wind.speed}km/h</span>
+            <span><img src={compassImg}/>{wind.deg}deg</span>
         </div>
     )
 }
