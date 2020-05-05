@@ -8,7 +8,7 @@ import Loading from '../loader/Loading';
 import { graphql } from '../lib/gql';
 import GET_DETAIL_WEATHER from '../queries/getDetailWeather';
 
-import { format } from 'date-fns'; 
+import { format } from 'date-fns';
 
 const WeatherDetail = () => {
     const [state, setState] = useState([])
@@ -34,9 +34,9 @@ const WeatherDetail = () => {
 
     return (<div className={style.card}>
         <h3>{state.getWeather && `${state.getWeather.city.name} Weather`}</h3>
-        <dd> <NavLink to="/">Back</NavLink></dd> 
+        <dd> <NavLink to="/">Back</NavLink></dd>
         <dd>
-            <div className={style.date}>  
+            <div className={style.date}>
                 <strong>{'Today is ' + format(new Date(), 'd MMM')}</strong>
             </div>
             <table className={style.weathertoday}>
@@ -54,7 +54,6 @@ const WeatherDetail = () => {
                             .filter((item, idx) => idx < 24)
                             .map((item, id) => (
                                 <tr key={id} className={style.text}>
-                                    {console.log(id)}
                                     <td>{`${id}:00`}</td>
                                     <td>{item.main.temp_c}</td>
                                     <td>{item.weather[0].main}</td>
@@ -63,7 +62,7 @@ const WeatherDetail = () => {
                             ))
                     }
                 </tbody>
-            </table> 
+            </table>
 
             <div className={style.date}>
                 <strong>Next day</strong>
