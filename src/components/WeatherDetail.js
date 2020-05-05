@@ -55,7 +55,10 @@ const WeatherDetail = () => {
                             .map((item, id) => (
                                 <tr key={id} className={style.text}>
                                     <td>{`${id}:00`}</td>
-                                    <td>{item.main.temp_c}</td>
+                                    <td>{Math.round(item.main.temp_c)}
+                                        <sup>o</sup>
+                                            C
+                                    </td>
                                     <td>{item.weather[0].main}</td>
                                     <td>{item.weather[0].description}</td>
                                 </tr>
@@ -83,7 +86,10 @@ const WeatherDetail = () => {
                             <tr key={id} className={style.text}>
                                 {console.log(id)}
                                 <td>{`${id}:00`}</td>
-                                <td>{item.main.temp_c}</td>
+                                <td>{Math.round(item.main.temp_c)}
+                                    <sup>o</sup>
+                                         C
+                                </td>
                                 <td>{item.weather[0].main}</td>
                                 <td>{item.weather[0].description}</td>
                             </tr>
