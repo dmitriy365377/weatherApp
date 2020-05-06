@@ -97,8 +97,7 @@ const WeatherDetail = () => {
                     }
                 </tbody>
             </table>
-
-
+  
         </dd>
     </div>
     );

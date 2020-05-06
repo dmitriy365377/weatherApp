@@ -1,20 +1,18 @@
 export default ` 
     query Weather($cityname:String) {
         getWeather(cityName:$cityname){ 
-            list {
-                dt 
+            list { 
 			    main { 
                     temp_c
                 }
              weather{
                 id
                 main
-                description
-                icon
+                description 
             }
         }
  	   city { 
-        name  
+            name  
         } 
     }   
 }
